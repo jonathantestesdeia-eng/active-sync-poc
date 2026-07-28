@@ -19,6 +19,7 @@ from .exceptions import (
 )
 
 
+LOGGER = logging.getLogger("active_sync.report_grid")
 GRID_DATE_FORMAT = "%d/%m/%Y %H:%M:%S"
 EXCEL_FORMAT_LABEL = "Planilha Excel com Nota Fiscal"
 
@@ -91,16 +92,26 @@ def parse_report_grid(html: str, base_url: str = "") -> list[ReportRow]:
             status = "concluído"
         else:
             status = "processando"
-        rows.append(
-            ReportRow(
-                report_id=report_id,
-                name=name,
-                report_format=report_format,
-                user=user,
-                requested_at=requested_at,
-                download_url=download_url,
-                status=status,
-            )
+        row = ReportRow(
+            report_id=report_id,
+            name=name,
+            report_format=report_format,
+            user=user,
+            requested_at=requested_at,
+            download_url=download_url,
+            status=status,
+        )
+        rows.append(row)
+        LOGGER.info(
+            "GRID_ROW id=%s file=%s user=%s status=%s format=%s "
+            "requested_raw=%s requested_parsed=%s",
+            row.report_id or "",
+            row.name,
+            row.user,
+            row.status,
+            row.report_format,
+            raw_date,
+            row.requested_at.isoformat() if row.requested_at else "",
         )
     return rows
 
@@ -121,24 +132,84 @@ def select_current_report(
     trigger_naive = trigger_local.replace(tzinfo=None)
     accepted_formats = {_normalized(report_format), _normalized(EXCEL_FORMAT_LABEL)}
     candidates: list[tuple[float, ReportRow]] = []
+    discarded = {
+        "name": 0,
+        "user": 0,
+        "format": 0,
+        "status": 0,
+        "requested_at": 0,
+        "time": 0,
+    }
     for row in rows:
-        if row.status == "cancelado" or row.requested_at is None:
+        LOGGER.info("CHECK_ROW id=%s", row.report_id or "")
+        if row.status == "cancelado":
+            discarded["status"] += 1
+            LOGGER.info("CHECK_ROW id=%s discard=status", row.report_id or "")
+            continue
+        if row.requested_at is None:
+            discarded["requested_at"] += 1
+            LOGGER.info("CHECK_ROW id=%s discard=requested_at_none", row.report_id or "")
             continue
         if not row.name.startswith(f"{report_name}_"):
+            discarded["name"] += 1
+            LOGGER.info("CHECK_ROW id=%s discard=name", row.report_id or "")
             continue
         if _normalized(row.report_format) not in accepted_formats:
+            discarded["format"] += 1
+            LOGGER.info("CHECK_ROW id=%s discard=format", row.report_id or "")
             continue
         if _normalized(row.user) != _normalized(user):
+            discarded["user"] += 1
+            LOGGER.info("CHECK_ROW id=%s discard=user", row.report_id or "")
             continue
         delta = (row.requested_at - trigger_naive).total_seconds()
         if delta < -tolerance_seconds:
+            discarded["time"] += 1
+            LOGGER.info(
+                "TIME_FILTER trigger_local=%s trigger_naive=%s requested_at=%s "
+                "delta_seconds=%s tolerance_seconds=%s",
+                trigger_local.isoformat(),
+                trigger_naive.isoformat(),
+                row.requested_at.isoformat(),
+                delta,
+                -tolerance_seconds,
+            )
+            LOGGER.info("CHECK_ROW id=%s discard=time", row.report_id or "")
             continue
         candidates.append((abs(delta), row))
 
     if not candidates:
+        LOGGER.info(
+            "GRID_SUMMARY rows_total=%s rows_parsed=%s discard_name=%s discard_user=%s "
+            "discard_format=%s discard_status=%s discard_requested_at=%s "
+            "discard_time=%s selected=%s",
+            len(rows),
+            len(rows),
+            discarded["name"],
+            discarded["user"],
+            discarded["format"],
+            discarded["status"],
+            discarded["requested_at"],
+            discarded["time"],
+            False,
+        )
         return None
     candidates.sort(key=lambda item: item[0])
     if len(candidates) > 1 and abs(candidates[0][0] - candidates[1][0]) <= 1:
+        LOGGER.info(
+            "GRID_SUMMARY rows_total=%s rows_parsed=%s discard_name=%s discard_user=%s "
+            "discard_format=%s discard_status=%s discard_requested_at=%s "
+            "discard_time=%s selected=%s",
+            len(rows),
+            len(rows),
+            discarded["name"],
+            discarded["user"],
+            discarded["format"],
+            discarded["status"],
+            discarded["requested_at"],
+            discarded["time"],
+            False,
+        )
         summary = "; ".join(
             f"ID={row.report_id or '?'} nome={row.name} data={row.requested_at}"
             for _, row in candidates[:5]
@@ -146,7 +217,29 @@ def select_current_report(
         raise ReportAmbiguityError(
             "Foram encontrados múltiplos relatórios compatíveis com esta execução: " + summary
         )
-    return candidates[0][1]
+    selected = candidates[0][1]
+    selected_delta = (selected.requested_at - trigger_naive).total_seconds()
+    LOGGER.info(
+        "SELECTED_REPORT id=%s file=%s delta_seconds=%s",
+        selected.report_id or "",
+        selected.name,
+        selected_delta,
+    )
+    LOGGER.info(
+        "GRID_SUMMARY rows_total=%s rows_parsed=%s discard_name=%s discard_user=%s "
+        "discard_format=%s discard_status=%s discard_requested_at=%s "
+        "discard_time=%s selected=%s",
+        len(rows),
+        len(rows),
+        discarded["name"],
+        discarded["user"],
+        discarded["format"],
+        discarded["status"],
+        discarded["requested_at"],
+        discarded["time"],
+        selected.report_id or selected.name,
+    )
+    return selected
 
 
 def _fetch_grid(client: ActiveClient) -> list[ReportRow]:
@@ -164,7 +257,17 @@ def _fetch_grid(client: ActiveClient) -> list[ReportRow]:
     lowered = text.casefold()
     if "name=\"password\"" in lowered and "/site/login/loging" in lowered:
         raise ReportRequestError("A sessão retornou para a tela de login durante o polling.")
-    return parse_report_grid(text, client.settings.base_url)
+    rows = parse_report_grid(text, client.settings.base_url)
+    LOGGER.info(
+        "GRID_FETCH status=%s content_type=%s url=%s html_size=%s tr_count=%s rows=%s",
+        response.status_code,
+        response.headers.get("Content-Type", ""),
+        response.url,
+        len(text),
+        len(BeautifulSoup(text, "html.parser").select("tr")),
+        len(rows),
+    )
+    return rows
 
 
 def _wait_for_row(
