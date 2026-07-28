@@ -1,19 +1,21 @@
 # Deploy do Active Sync
 
-## Render
+## Render — homologação gratuita
 
 O projeto expõe a aplicação FastAPI em `active_sync.api.app:app`. O CLI
 permanece disponível em `main.py`; a publicação HTTP reutiliza o mesmo pipeline.
 
-O `render.yaml` da raiz configura:
+O `render.yaml` da raiz configura uma homologação gratuita da integração
+SuperTrack (Netlify) → Active Sync API (Render):
 
 - Web Service Python;
+- plano gratuito (`free`);
 - Python 3.12 pela `.python-version`;
 - uma única instância;
 - health check em `GET /health`;
 - Uvicorn em `0.0.0.0` e na porta fornecida por `PORT`;
-- disco persistente de 1 GB montado em `/var/data`;
-- SQLite e arquivos operacionais dentro do volume persistente.
+- SQLite e arquivos operacionais temporários em `/tmp/active-sync`;
+- nenhum disco persistente ou serviço pago.
 
 Comandos equivalentes para configuração manual:
 
@@ -25,9 +27,13 @@ Start Command: uvicorn active_sync.api.app:app --host 0.0.0.0 --port ${PORT:-800
 O Render fornece `PORT` automaticamente. A expansão `${PORT:-8000}` mantém
 `8000` como padrão quando a variável não estiver definida.
 
-O disco persistente exige uma instância paga do Render. Não utilize filesystem
-efêmero para a base histórica: sem disco, o SQLite e os arquivos baixados são
-perdidos em reinícios e novos deploys.
+Esta configuração é exclusiva para homologação. O filesystem do serviço
+gratuito do Render é efêmero. O SQLite e os arquivos baixados podem ser
+perdidos em restart, redeploy, substituição da instância ou spin-down.
+
+Para produção, mantenha a implementação SQLite existente e contrate um disco
+persistente, ou configure futuramente um banco externo homologado. A
+configuração gratuita não deve ser utilizada como base histórica definitiva.
 
 No primeiro Blueprint, informe no painel do Render os valores marcados com
 `sync: false`:

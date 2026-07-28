@@ -2,24 +2,20 @@ services:
   - type: web
     name: active-sync-api
     runtime: python
-    plan: starter
+    plan: free
     numInstances: 1
     buildCommand: pip install -r requirements.txt
     startCommand: "uvicorn active_sync.api.app:app --host 0.0.0.0 --port ${PORT:-8000}"
     healthCheckPath: /health
-    disk:
-      name: active-sync-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: APP_ENV
         value: production
       - key: ACTIVE_SYNC_ALLOWED_ORIGINS
         value: https://supertrack-logistics.netlify.app
       - key: ACTIVE_SYNC_DATABASE_PATH
-        value: /var/data/active_sync.sqlite3
+        value: /tmp/active-sync/active_sync.sqlite3
       - key: ACTIVE_SYNC_WORK_DIR
-        value: /var/data/runtime
+        value: /tmp/active-sync/runtime
       - key: ACTIVE_SYNC_PROFILE
         value: supertrack
       - key: ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS
