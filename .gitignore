@@ -1,0 +1,13 @@
+.env
+.venv/
+downloads/
+extraidos/
+logs/
+runtime/
+__pycache__/
+*.pyc
+*.zip
+*.xlsx
+*.xls
+*.sqlite3
+.pytest_cache/

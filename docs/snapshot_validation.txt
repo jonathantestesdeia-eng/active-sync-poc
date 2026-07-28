@@ -1,0 +1,64 @@
+SNAPSHOT VALIDATION
+
+Status: TEMPORAL_MISMATCH
+Executado em: 2026-07-22T11:56:53-03:00
+Arquivo bruto: C:\Users\SUPERMED\OneDrive\Desktop\Conhecimento - CTe_21072026_152324.xlsx
+Arquivo de referência: C:\Users\SUPERMED\OneDrive\Desktop\teste.junho.xlsx
+Alinhamento por: ['Nota Fiscal']
+Linhas associadas: 1076
+
+Colunas temporais avaliadas
+
+Coluna: Saída
+Preenchidos no bruto: 1076
+Preenchidos na referência: 1076
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 15/07/2026
+Maior data no bruto: 16/07/2026
+Menor data na referência: 15/07/2026
+Maior data na referência: 16/07/2026
+Mesma data preenchida: 1076
+Nulos nos dois lados: 0
+Somente no bruto: 0
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 0
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Coluna: Previsão
+Preenchidos no bruto: 1076
+Preenchidos na referência: 1076
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 16/07/2026
+Maior data no bruto: 21/08/2026
+Menor data na referência: 16/07/2026
+Maior data na referência: 21/08/2026
+Mesma data preenchida: 1076
+Nulos nos dois lados: 0
+Somente no bruto: 0
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 0
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Coluna: Entrega
+Preenchidos no bruto: 781
+Preenchidos na referência: 621
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 16/07/2026
+Maior data no bruto: 21/07/2026
+Menor data na referência: 16/07/2026
+Maior data na referência: 20/07/2026
+Mesma data preenchida: 621
+Nulos nos dois lados: 295
+Somente no bruto: 160
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 71
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Conclusão
+Os preenchimentos adicionais aparecem somente no bruto, sem datas conflitantes quando ambos os arquivos possuem valor. Os arquivos provavelmente representam momentos diferentes da operação. A equivalência das colunas afetadas não pode ser validada de forma conclusiva com este par de arquivos.

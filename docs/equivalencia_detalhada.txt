@@ -1,0 +1,11094 @@
+SNAPSHOT VALIDATION
+
+Status: TEMPORAL_MISMATCH
+Executado em: 2026-07-22T11:56:53-03:00
+Arquivo bruto: C:\Users\SUPERMED\OneDrive\Desktop\Conhecimento - CTe_21072026_152324.xlsx
+Arquivo de referência: C:\Users\SUPERMED\OneDrive\Desktop\teste.junho.xlsx
+Alinhamento por: ['Nota Fiscal']
+Linhas associadas: 1076
+
+Colunas temporais avaliadas
+
+Coluna: Saída
+Preenchidos no bruto: 1076
+Preenchidos na referência: 1076
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 15/07/2026
+Maior data no bruto: 16/07/2026
+Menor data na referência: 15/07/2026
+Maior data na referência: 16/07/2026
+Mesma data preenchida: 1076
+Nulos nos dois lados: 0
+Somente no bruto: 0
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 0
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Coluna: Previsão
+Preenchidos no bruto: 1076
+Preenchidos na referência: 1076
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 16/07/2026
+Maior data no bruto: 21/08/2026
+Menor data na referência: 16/07/2026
+Maior data na referência: 21/08/2026
+Mesma data preenchida: 1076
+Nulos nos dois lados: 0
+Somente no bruto: 0
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 0
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Coluna: Entrega
+Preenchidos no bruto: 781
+Preenchidos na referência: 621
+Inválidos no bruto: 0
+Inválidos na referência: 0
+Menor data no bruto: 16/07/2026
+Maior data no bruto: 21/07/2026
+Menor data na referência: 16/07/2026
+Maior data na referência: 20/07/2026
+Mesma data preenchida: 621
+Nulos nos dois lados: 295
+Somente no bruto: 160
+Somente na referência: 0
+Datas conflitantes: 0
+Exclusivos do bruto posteriores ao máximo da referência: 71
+Exclusivos da referência posteriores ao máximo do bruto: 0
+
+Conclusão
+Os preenchimentos adicionais aparecem somente no bruto, sem datas conflitantes quando ambos os arquivos possuem valor. Os arquivos provavelmente representam momentos diferentes da operação. A equivalência das colunas afetadas não pode ser validada de forma conclusiva com este par de arquivos.
+
+RELATÓRIO DE EQUIVALÊNCIA — PYTHON X POWER QUERY
+
+Estrutura
+Linhas Python: 1076
+Linhas Power Query: 1076
+Colunas Python: 22
+Colunas Power Query: 21
+Ordem das colunas: DIVERGENTE
+Alinhamento por: ['Nota Fiscal']
+Linhas associadas pela chave: 1076
+
+Divergências estruturais
+- Quantidade de colunas divergente: Python=22; Power Query=21.
+- Os nomes ou a ordem das colunas são divergentes.
+- Colunas ausentes no Power Query: ['Situação'].
+
+Equivalência por coluna
+CNPJ: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Destinatário: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Cidade Origem: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Cidade Destino: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+UF Destino: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Nota Fiscal: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Valor Frete: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Saída: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Previsão: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Entrega: 85.13% (916 iguais; 160 diferentes; preenchidos Python=781; Power Query=621; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Transportadora: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Flag Devolução NF: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Tipo CTe: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+CTe Devolução: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=0; Power Query=0; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Código cliente: 100.00% (1076 iguais; 0 diferentes; preenchidos Python=1013; Power Query=1013; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Prazo: 85.13% (916 iguais; 160 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Data: 85.13% (916 iguais; 160 diferentes; preenchidos Python=781; Power Query=621; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Ano: 85.13% (916 iguais; 160 diferentes; preenchidos Python=781; Power Query=621; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Prazo2: 85.13% (916 iguais; 160 diferentes; preenchidos Python=1076; Power Query=1076; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Data3: 85.13% (916 iguais; 160 diferentes; preenchidos Python=781; Power Query=621; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Ano4: 85.13% (916 iguais; 160 diferentes; preenchidos Python=781; Power Query=621; comparáveis temporalmente=100.00% (916 iguais; 0 diferentes))
+Situação: 0.00% (0 iguais; 1076 diferentes; preenchidos Python=1076; Power Query=0; comparáveis temporalmente=0.00% (0 iguais; 916 diferentes))
+
+Equivalência geral dos valores
+90.72%
+
+Equivalência nos registros temporalmente comparáveis
+Linhas comparáveis: 916
+Linhas excluídas por snapshot: 160
+Equivalência comparável: 95.45%
+
+Divergências célula a célula
+
+Linha 625
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 627
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 628
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 633
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 636
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 638
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 639
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 641
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 642
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 643
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 646
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 647
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 650
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 651
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 654
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 656
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 658
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 661
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 662
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 663
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 670
+Coluna: Entrega
+Python: Timestamp('2026-07-16 00:00:00')
+Power Query: None
+
+Linha 673
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 682
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 683
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 684
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 685
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 687
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 688
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 689
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 690
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 693
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 700
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 706
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 712
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 714
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 715
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 716
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 717
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 720
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 721
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 722
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 724
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 725
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 729
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 733
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 735
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 736
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 738
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 746
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 747
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 749
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 750
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 758
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 761
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 773
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 774
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 779
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 780
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 781
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 782
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 783
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 784
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 786
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 787
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 793
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 796
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 797
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 806
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 807
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 808
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 809
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 811
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 812
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 820
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 821
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 831
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 832
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 834
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 839
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 842
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 848
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 849
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 850
+Coluna: Entrega
+Python: Timestamp('2026-07-16 00:00:00')
+Power Query: None
+
+Linha 851
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 855
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 862
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 863
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 864
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 869
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 870
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 876
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 879
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 881
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 882
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 884
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 885
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 888
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 890
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 892
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 893
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 896
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 897
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 898
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 900
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 902
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 903
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 907
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 908
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 912
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 913
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 918
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 920
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 921
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 923
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 924
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 925
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 929
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 933
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 938
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 939
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 950
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 953
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 955
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 959
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 960
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 962
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 972
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 974
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 975
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 977
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 980
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 982
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 983
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 984
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 985
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 987
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 988
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 989
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 992
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 998
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1001
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1005
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1009
+Coluna: Entrega
+Python: Timestamp('2026-07-17 00:00:00')
+Power Query: None
+
+Linha 1011
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1012
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1022
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1023
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1024
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1031
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1035
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1042
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1047
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1048
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1050
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1052
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1065
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1066
+Coluna: Entrega
+Python: Timestamp('2026-07-20 00:00:00')
+Power Query: None
+
+Linha 1071
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1072
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 1076
+Coluna: Entrega
+Python: Timestamp('2026-07-21 00:00:00')
+Power Query: None
+
+Linha 625
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 627
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 628
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 633
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 636
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 638
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 639
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 641
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 642
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 643
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 646
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 647
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 650
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 651
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 654
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 656
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 658
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 661
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 662
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 663
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 670
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 673
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 682
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 683
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 684
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 685
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 687
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 688
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 689
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 690
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 693
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 700
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 706
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 712
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 714
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 715
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 716
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 717
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 720
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 721
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 722
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 724
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 725
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 729
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 733
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 735
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 736
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 738
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 746
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 747
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 749
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 750
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 758
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 761
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 773
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 774
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 779
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 780
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 781
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 782
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 783
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 784
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 786
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 787
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 793
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 796
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 797
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 806
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 807
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 808
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 809
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 811
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 812
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 820
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 821
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 831
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 832
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 834
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 839
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 842
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 848
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 849
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 850
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 851
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 855
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 862
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 863
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 864
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 869
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 870
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 876
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 879
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 881
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 882
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 884
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 885
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 888
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 890
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 892
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 893
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 896
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 897
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 898
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 900
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 902
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 903
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 907
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 908
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 912
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 913
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 918
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 920
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 921
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 923
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 924
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 925
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 929
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 933
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 938
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 939
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 950
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 953
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 955
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 959
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 960
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 962
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 972
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 974
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 975
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 977
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 980
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 982
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 983
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 984
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 985
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 987
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 988
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 989
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 992
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 998
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1001
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1005
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1009
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1011
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1012
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1022
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1023
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1024
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1031
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1035
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1042
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1047
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1048
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1050
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1052
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1065
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1066
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1071
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1072
+Coluna: Prazo
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1076
+Coluna: Prazo
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 625
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 627
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 628
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 633
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 636
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 638
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 639
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 641
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 642
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 643
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 646
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 647
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 650
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 651
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 654
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 656
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 658
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 661
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 662
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 663
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 670
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 673
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 682
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 683
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 684
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 685
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 687
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 688
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 689
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 690
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 693
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 700
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 706
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 712
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 714
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 715
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 716
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 717
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 720
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 721
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 722
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 724
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 725
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 729
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 733
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 735
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 736
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 738
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 746
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 747
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 749
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 750
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 758
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 761
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 773
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 774
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 779
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 780
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 781
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 782
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 783
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 784
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 786
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 787
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 793
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 796
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 797
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 806
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 807
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 808
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 809
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 811
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 812
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 820
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 821
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 831
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 832
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 834
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 839
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 842
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 848
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 849
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 850
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 851
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 855
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 862
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 863
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 864
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 869
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 870
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 876
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 879
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 881
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 882
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 884
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 885
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 888
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 890
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 892
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 893
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 896
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 897
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 898
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 900
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 902
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 903
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 907
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 908
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 912
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 913
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 918
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 920
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 921
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 923
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 924
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 925
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 929
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 933
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 938
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 939
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 950
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 953
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 955
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 959
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 960
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 962
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 972
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 974
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 975
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 977
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 980
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 982
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 983
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 984
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 985
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 987
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 988
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 989
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 992
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 998
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1001
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1005
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1009
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1011
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1012
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1022
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1023
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1024
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1031
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1035
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1042
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1047
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1048
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1050
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1052
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1065
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1066
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1071
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1072
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 1076
+Coluna: Data
+Python: 'julho'
+Power Query: None
+
+Linha 625
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 627
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 628
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 633
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 636
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 638
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 639
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 641
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 642
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 643
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 646
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 647
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 650
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 651
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 654
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 656
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 658
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 661
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 662
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 663
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 670
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 673
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 682
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 683
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 684
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 685
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 687
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 688
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 689
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 690
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 693
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 700
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 706
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 712
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 714
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 715
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 716
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 717
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 720
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 721
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 722
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 724
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 725
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 729
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 733
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 735
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 736
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 738
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 746
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 747
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 749
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 750
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 758
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 761
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 773
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 774
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 779
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 780
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 781
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 782
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 783
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 784
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 786
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 787
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 793
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 796
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 797
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 806
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 807
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 808
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 809
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 811
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 812
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 820
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 821
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 831
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 832
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 834
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 839
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 842
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 848
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 849
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 850
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 851
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 855
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 862
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 863
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 864
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 869
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 870
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 876
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 879
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 881
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 882
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 884
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 885
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 888
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 890
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 892
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 893
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 896
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 897
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 898
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 900
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 902
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 903
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 907
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 908
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 912
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 913
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 918
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 920
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 921
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 923
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 924
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 925
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 929
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 933
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 938
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 939
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 950
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 953
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 955
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 959
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 960
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 962
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 972
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 974
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 975
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 977
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 980
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 982
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 983
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 984
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 985
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 987
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 988
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 989
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 992
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 998
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1001
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1005
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1009
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1011
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1012
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1022
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1023
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1024
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1031
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1035
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1042
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1047
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1048
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1050
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1052
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1065
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1066
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1071
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1072
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1076
+Coluna: Ano
+Python: np.int64(2026)
+Power Query: None
+
+Linha 625
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 627
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 628
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 633
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 636
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 638
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 639
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 641
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 642
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 643
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 646
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 647
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 650
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 651
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 654
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 656
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 658
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 661
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 662
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 663
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 670
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 673
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 682
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 683
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 684
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 685
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 687
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 688
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 689
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 690
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 693
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 700
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 706
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 712
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 714
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 715
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 716
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 717
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 720
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 721
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 722
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 724
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 725
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 729
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 733
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 735
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 736
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 738
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 746
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 747
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 749
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 750
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 758
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 761
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 773
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 774
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 779
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 780
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 781
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 782
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 783
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 784
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 786
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 787
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 793
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 796
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 797
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 806
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 807
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 808
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 809
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 811
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 812
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 820
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 821
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 831
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 832
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 834
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 839
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 842
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 848
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 849
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 850
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 851
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 855
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 862
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 863
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 864
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 869
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 870
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 876
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 879
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 881
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 882
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 884
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 885
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 888
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 890
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 892
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 893
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 896
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 897
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 898
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 900
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 902
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 903
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 907
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 908
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 912
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 913
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 918
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 920
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 921
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 923
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 924
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 925
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 929
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 933
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 938
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 939
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 950
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 953
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 955
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 959
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 960
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 962
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 972
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 974
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 975
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 977
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 980
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 982
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 983
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 984
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 985
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 987
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 988
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 989
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 992
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 998
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1001
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1005
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1009
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1011
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1012
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1022
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1023
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1024
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1031
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1035
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1042
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1047
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1048
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1050
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1052
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1065
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1066
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1071
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1072
+Coluna: Prazo2
+Python: 'ENTREGUE COM ATRASO'
+Power Query: 'Sem informação de entrega'
+
+Linha 1076
+Coluna: Prazo2
+Python: 'ENTREGUE NO PRAZO'
+Power Query: 'Sem informação de entrega'
+
+Linha 625
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 627
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 628
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 633
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 636
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 638
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 639
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 641
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 642
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 643
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 646
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 647
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 650
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 651
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 654
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 656
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 658
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 661
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 662
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 663
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 670
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 673
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 682
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 683
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 684
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 685
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 687
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 688
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 689
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 690
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 693
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 700
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 706
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 712
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 714
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 715
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 716
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 717
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 720
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 721
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 722
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 724
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 725
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 729
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 733
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 735
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 736
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 738
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 746
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 747
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 749
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 750
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 758
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 761
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 773
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 774
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 779
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 780
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 781
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 782
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 783
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 784
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 786
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 787
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 793
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 796
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 797
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 806
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 807
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 808
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 809
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 811
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 812
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 820
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 821
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 831
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 832
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 834
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 839
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 842
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 848
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 849
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 850
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 851
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 855
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 862
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 863
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 864
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 869
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 870
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 876
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 879
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 881
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 882
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 884
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 885
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 888
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 890
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 892
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 893
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 896
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 897
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 898
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 900
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 902
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 903
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 907
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 908
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 912
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 913
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 918
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 920
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 921
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 923
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 924
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 925
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 929
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 933
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 938
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 939
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 950
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 953
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 955
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 959
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 960
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 962
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 972
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 974
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 975
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 977
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 980
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 982
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 983
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 984
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 985
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 987
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 988
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 989
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 992
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 998
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1001
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1005
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1009
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1011
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1012
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1022
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1023
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1024
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1031
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1035
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1042
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1047
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1048
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1050
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1052
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1065
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1066
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1071
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1072
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 1076
+Coluna: Data3
+Python: 'julho'
+Power Query: None
+
+Linha 625
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 627
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 628
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 633
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 636
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 638
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 639
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 641
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 642
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 643
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 646
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 647
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 650
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 651
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 654
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 656
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 658
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 661
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 662
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 663
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 670
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 673
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 682
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 683
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 684
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 685
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 687
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 688
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 689
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 690
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 693
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 700
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 706
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 712
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 714
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 715
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 716
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 717
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 720
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 721
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 722
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 724
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 725
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 729
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 733
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 735
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 736
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 738
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 746
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 747
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 749
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 750
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 758
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 761
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 773
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 774
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 779
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 780
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 781
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 782
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 783
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 784
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 786
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 787
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 793
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 796
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 797
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 806
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 807
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 808
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 809
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 811
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 812
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 820
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 821
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 831
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 832
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 834
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 839
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 842
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 848
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 849
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 850
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 851
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 855
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 862
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 863
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 864
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 869
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 870
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 876
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 879
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 881
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 882
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 884
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 885
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 888
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 890
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 892
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 893
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 896
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 897
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 898
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 900
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 902
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 903
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 907
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 908
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 912
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 913
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 918
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 920
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 921
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 923
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 924
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 925
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 929
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 933
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 938
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 939
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 950
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 953
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 955
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 959
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 960
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 962
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 972
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 974
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 975
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 977
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 980
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 982
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 983
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 984
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 985
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 987
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 988
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 989
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 992
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 998
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1001
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1005
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1009
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1011
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1012
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1022
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1023
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1024
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1031
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1035
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1042
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1047
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1048
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1050
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1052
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1065
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1066
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1071
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1072
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1076
+Coluna: Ano4
+Python: np.int64(2026)
+Power Query: None
+
+Linha 1
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 2
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 3
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 4
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 5
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 6
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 7
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 8
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 9
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 10
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 11
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 12
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 13
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 14
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 15
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 16
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 17
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 18
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 19
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 20
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 21
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 22
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 23
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 24
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 25
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 26
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 27
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 28
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 29
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 30
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 31
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 32
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 33
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 34
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 35
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 36
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 37
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 38
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 39
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 40
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 41
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 42
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 43
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 44
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 45
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 46
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 47
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 48
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 49
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 50
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 51
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 52
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 53
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 54
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 55
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 56
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 57
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 58
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 59
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 60
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 61
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 62
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 63
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 64
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 65
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 66
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 67
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 68
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 69
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 70
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 71
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 72
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 73
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 74
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 75
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 76
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 77
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 78
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 79
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 80
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 81
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 82
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 83
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 84
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 85
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 86
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 87
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 88
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 89
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 90
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 91
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 92
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 93
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 94
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 95
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 96
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 97
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 98
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 99
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 100
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 101
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 102
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 103
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 104
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 105
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 106
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 107
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 108
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 109
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 110
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 111
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 112
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 113
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 114
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 115
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 116
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 117
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 118
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 119
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 120
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 121
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 122
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 123
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 124
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 125
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 126
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 127
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 128
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 129
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 130
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 131
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 132
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 133
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 134
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 135
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 136
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 137
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 138
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 139
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 140
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 141
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 142
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 143
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 144
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 145
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 146
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 147
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 148
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 149
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 150
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 151
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 152
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 153
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 154
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 155
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 156
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 157
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 158
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 159
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 160
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 161
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 162
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 163
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 164
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 165
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 166
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 167
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 168
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 169
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 170
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 171
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 172
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 173
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 174
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 175
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 176
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 177
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 178
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 179
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 180
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 181
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 182
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 183
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 184
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 185
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 186
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 187
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 188
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 189
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 190
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 191
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 192
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 193
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 194
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 195
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 196
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 197
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 198
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 199
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 200
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 201
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 202
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 203
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 204
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 205
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 206
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 207
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 208
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 209
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 210
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 211
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 212
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 213
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 214
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 215
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 216
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 217
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 218
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 219
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 220
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 221
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 222
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 223
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 224
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 225
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 226
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 227
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 228
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 229
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 230
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 231
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 232
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 233
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 234
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 235
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 236
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 237
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 238
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 239
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 240
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 241
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 242
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 243
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 244
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 245
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 246
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 247
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 248
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 249
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 250
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 251
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 252
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 253
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 254
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 255
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 256
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 257
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 258
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 259
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 260
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 261
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 262
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 263
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 264
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 265
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 266
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 267
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 268
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 269
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 270
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 271
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 272
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 273
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 274
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 275
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 276
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 277
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 278
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 279
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 280
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 281
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 282
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 283
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 284
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 285
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 286
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 287
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 288
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 289
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 290
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 291
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 292
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 293
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 294
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 295
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 296
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 297
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 298
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 299
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 300
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 301
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 302
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 303
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 304
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 305
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 306
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 307
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 308
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 309
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 310
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 311
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 312
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 313
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 314
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 315
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 316
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 317
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 318
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 319
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 320
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 321
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 322
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 323
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 324
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 325
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 326
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 327
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 328
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 329
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 330
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 331
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 332
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 333
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 334
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 335
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 336
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 337
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 338
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 339
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 340
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 341
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 342
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 343
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 344
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 345
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 346
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 347
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 348
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 349
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 350
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 351
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 352
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 353
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 354
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 355
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 356
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 357
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 358
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 359
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 360
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 361
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 362
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 363
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 364
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 365
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 366
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 367
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 368
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 369
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 370
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 371
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 372
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 373
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 374
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 375
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 376
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 377
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 378
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 379
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 380
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 381
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 382
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 383
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 384
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 385
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 386
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 387
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 388
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 389
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 390
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 391
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 392
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 393
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 394
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 395
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 396
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 397
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 398
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 399
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 400
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 401
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 402
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 403
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 404
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 405
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 406
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 407
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 408
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 409
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 410
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 411
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 412
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 413
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 414
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 415
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 416
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 417
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 418
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 419
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 420
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 421
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 422
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 423
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 424
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 425
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 426
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 427
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 428
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 429
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 430
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 431
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 432
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 433
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 434
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 435
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 436
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 437
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 438
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 439
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 440
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 441
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 442
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 443
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 444
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 445
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 446
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 447
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 448
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 449
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 450
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 451
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 452
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 453
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 454
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 455
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 456
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 457
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 458
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 459
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 460
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 461
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 462
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 463
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 464
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 465
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 466
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 467
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 468
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 469
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 470
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 471
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 472
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 473
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 474
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 475
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 476
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 477
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 478
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 479
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 480
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 481
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 482
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 483
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 484
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 485
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 486
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 487
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 488
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 489
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 490
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 491
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 492
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 493
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 494
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 495
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 496
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 497
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 498
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 499
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 500
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 501
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 502
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 503
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 504
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 505
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 506
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 507
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 508
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 509
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 510
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 511
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 512
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 513
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 514
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 515
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 516
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 517
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 518
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 519
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 520
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 521
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 522
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 523
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 524
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 525
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 526
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 527
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 528
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 529
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 530
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 531
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 532
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 533
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 534
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 535
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 536
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 537
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 538
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 539
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 540
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 541
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 542
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 543
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 544
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 545
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 546
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 547
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 548
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 549
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 550
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 551
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 552
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 553
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 554
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 555
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 556
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 557
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 558
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 559
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 560
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 561
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 562
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 563
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 564
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 565
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 566
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 567
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 568
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 569
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 570
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 571
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 572
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 573
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 574
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 575
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 576
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 577
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 578
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 579
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 580
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 581
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 582
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 583
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 584
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 585
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 586
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 587
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 588
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 589
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 590
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 591
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 592
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 593
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 594
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 595
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 596
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 597
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 598
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 599
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 600
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 601
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 602
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 603
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 604
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 605
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 606
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 607
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 608
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 609
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 610
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 611
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 612
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 613
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 614
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 615
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 616
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 617
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 618
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 619
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 620
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 621
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 622
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 623
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 624
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 625
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 626
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 627
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 628
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 629
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 630
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 631
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 632
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 633
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 634
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 635
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 636
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 637
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 638
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 639
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 640
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 641
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 642
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 643
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 644
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 645
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 646
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 647
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 648
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 649
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 650
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 651
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 652
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 653
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 654
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 655
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 656
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 657
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 658
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 659
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 660
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 661
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 662
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 663
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 664
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 665
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 666
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 667
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 668
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 669
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 670
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 671
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 672
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 673
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 674
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 675
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 676
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 677
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 678
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 679
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 680
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 681
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 682
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 683
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 684
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 685
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 686
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 687
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 688
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 689
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 690
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 691
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 692
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 693
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 694
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 695
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 696
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 697
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 698
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 699
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 700
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 701
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 702
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 703
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 704
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 705
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 706
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 707
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 708
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 709
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 710
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 711
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 712
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 713
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 714
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 715
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 716
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 717
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 718
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 719
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 720
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 721
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 722
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 723
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 724
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 725
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 726
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 727
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 728
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 729
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 730
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 731
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 732
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 733
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 734
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 735
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 736
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 737
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 738
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 739
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 740
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 741
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 742
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 743
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 744
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 745
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 746
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 747
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 748
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 749
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 750
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 751
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 752
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 753
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 754
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 755
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 756
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 757
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 758
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 759
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 760
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 761
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 762
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 763
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 764
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 765
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 766
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 767
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 768
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 769
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 770
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 771
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 772
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 773
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 774
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 775
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 776
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 777
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 778
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 779
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 780
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 781
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 782
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 783
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 784
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 785
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 786
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 787
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 788
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 789
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 790
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 791
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 792
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 793
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 794
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 795
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 796
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 797
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 798
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 799
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 800
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 801
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 802
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 803
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 804
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 805
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 806
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 807
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 808
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 809
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 810
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 811
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 812
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 813
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 814
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 815
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 816
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 817
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 818
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 819
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 820
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 821
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 822
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 823
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 824
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 825
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 826
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 827
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 828
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 829
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 830
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 831
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 832
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 833
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 834
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 835
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 836
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 837
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 838
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 839
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 840
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 841
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 842
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 843
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 844
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 845
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 846
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 847
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 848
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 849
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 850
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 851
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 852
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 853
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 854
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 855
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 856
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 857
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 858
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 859
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 860
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 861
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 862
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 863
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 864
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 865
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 866
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 867
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 868
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 869
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 870
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 871
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 872
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 873
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 874
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 875
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 876
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 877
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 878
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 879
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 880
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 881
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 882
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 883
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 884
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 885
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 886
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 887
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 888
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 889
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 890
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 891
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 892
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 893
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 894
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 895
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 896
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 897
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 898
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 899
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 900
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 901
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 902
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 903
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 904
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 905
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 906
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 907
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 908
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 909
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 910
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 911
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 912
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 913
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 914
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 915
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 916
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 917
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 918
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 919
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 920
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 921
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 922
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 923
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 924
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 925
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 926
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 927
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 928
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 929
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 930
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 931
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 932
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 933
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 934
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 935
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 936
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 937
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 938
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 939
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 940
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 941
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 942
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 943
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 944
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 945
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 946
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 947
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 948
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 949
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 950
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 951
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 952
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 953
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 954
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 955
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 956
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 957
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 958
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 959
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 960
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 961
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 962
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 963
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 964
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 965
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 966
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 967
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 968
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 969
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 970
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 971
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 972
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 973
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 974
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 975
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 976
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 977
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 978
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 979
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 980
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 981
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 982
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 983
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 984
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 985
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 986
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 987
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 988
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 989
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 990
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 991
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 992
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 993
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 994
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 995
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 996
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 997
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 998
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 999
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1000
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1001
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1002
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 1003
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1004
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1005
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1006
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1007
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1008
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1009
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1010
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1011
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1012
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1013
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1014
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1015
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1016
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1017
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1018
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1019
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1020
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1021
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1022
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1023
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1024
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1025
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1026
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 1027
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1028
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 1029
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1030
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1031
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1032
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1033
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1034
+Coluna: Situação
+Python: 'PREVISTA PARA HOJE'
+Power Query: <AUSENTE>
+
+Linha 1035
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1036
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1037
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1038
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1039
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1040
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1041
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1042
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1043
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1044
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1045
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1046
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1047
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1048
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1049
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1050
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1051
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1052
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1053
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1054
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1055
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1056
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1057
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1058
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1059
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1060
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1061
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1062
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1063
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1064
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1065
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1066
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1067
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1068
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1069
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1070
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1071
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1072
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
+
+Linha 1073
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1074
+Coluna: Situação
+Python: 'ATRASADA'
+Power Query: <AUSENTE>
+
+Linha 1075
+Coluna: Situação
+Python: 'EM ABERTO'
+Power Query: <AUSENTE>
+
+Linha 1076
+Coluna: Situação
+Python: 'ENTREGUE'
+Power Query: <AUSENTE>
