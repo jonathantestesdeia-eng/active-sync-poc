@@ -7,6 +7,7 @@ from datetime import datetime
 import logging
 import time
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
 import requests
@@ -21,6 +22,7 @@ from .exceptions import (
 
 GRID_DATE_FORMAT = "%d/%m/%Y %H:%M:%S"
 EXCEL_FORMAT_LABEL = "Planilha Excel com Nota Fiscal"
+ACTIVE_TIMEZONE = ZoneInfo("America/Sao_Paulo")
 
 
 @dataclass(frozen=True, slots=True)
@@ -119,6 +121,14 @@ def _normalized(value: str) -> str:
     return " ".join(value.casefold().split())
 
 
+def _active_local_naive(value: datetime) -> datetime:
+    """Converte horários conscientes para o fuso do Active e preserva naive como local."""
+    if value.tzinfo is None:
+        # Compatibilidade: callers antigos já fornecem o horário local exibido pelo Active.
+        return value
+    return value.astimezone(ACTIVE_TIMEZONE).replace(tzinfo=None)
+
+
 def select_current_report(
     rows: list[ReportRow],
     *,
@@ -128,7 +138,7 @@ def select_current_report(
     trigger_local: datetime,
     tolerance_seconds: int,
 ) -> ReportRow | None:
-    trigger_naive = trigger_local.replace(tzinfo=None)
+    trigger_naive = _active_local_naive(trigger_local)
     accepted_formats = {_normalized(report_format), _normalized(EXCEL_FORMAT_LABEL)}
     candidates: list[tuple[float, ReportRow]] = []
     discarded = {
