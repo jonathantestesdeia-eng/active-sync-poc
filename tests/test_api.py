@@ -19,7 +19,9 @@ from active_sync.api.dependencies import (
 )
 from active_sync.operation import (
     SyncAlreadyRunningError,
+    SyncCommand,
     SyncHistoryEntry,
+    SyncHistoryStore,
     SyncMode,
     SyncOrigin,
     SyncStatus,
@@ -110,6 +112,29 @@ def test_health(client: TestClient) -> None:
     assert payload["storage"] == "ok"
     assert payload["version"] == "17.0.0-test"
     assert payload["timestamp"]
+
+
+def test_startup_recovers_interrupted_sync(api_settings: ApplicationSettings) -> None:
+    assert api_settings.database_path is not None
+    history = SyncHistoryStore(api_settings.database_path)
+    history.initialize()
+    entry = history.begin(
+        SyncCommand(
+            request_id="startup-interrupted-request",
+            mode=SyncMode.INCREMENTAL,
+            origin=SyncOrigin.MANUAL,
+            user="operador",
+            started_at=datetime(2026, 7, 29, 12, 0, tzinfo=timezone.utc),
+        )
+    )
+
+    with TestClient(create_app(api_settings)):
+        recovered = history.get(entry.id)
+
+    assert recovered is not None
+    assert recovered.status is SyncStatus.ERROR
+    assert recovered.finished_at is not None
+    assert recovered.errors == "Sincronização interrompida por reinício da aplicação."
 
 
 def test_health_database_version_and_info(client: TestClient) -> None:

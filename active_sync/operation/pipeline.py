@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date, datetime, time, timedelta
 import logging
 from time import monotonic
 from typing import Callable
@@ -21,6 +21,7 @@ from active_sync.reports import ReportWindow, request_report
 
 from .models import SyncCommand, SyncMode, SyncResult, SyncValidationError
 from .profiles import get_processing_profile
+from .sync_policy import SYNC_TIMEZONE, SyncPeriodResolver
 
 
 MAX_WINDOW_DAYS = 7
@@ -39,6 +40,16 @@ class OperationalSyncPipeline:
         self.application_settings = application_settings
         self.logger = logger
         self.today = today or date.today
+        resolver_now = (
+            lambda: datetime.combine(self.today(), time.min, tzinfo=SYNC_TIMEZONE)
+            if today is not None
+            else None
+        )
+        self.period_resolver = SyncPeriodResolver(
+            application_settings,
+            logger,
+            now=resolver_now,
+        )
         self.profile = get_processing_profile(
             application_settings.processing_profile
         )
@@ -132,23 +143,8 @@ class OperationalSyncPipeline:
         return result
 
     def _resolve_dates(self, command: SyncCommand) -> tuple[date, date]:
-        current = self.today()
-        if command.mode is SyncMode.PERIOD:
-            if command.start_date is None or command.end_date is None:
-                raise SyncValidationError("Datas inicial e final sao obrigatorias para PERIODO.")
-            start_date, end_date = command.start_date, command.end_date
-        elif command.mode is SyncMode.FULL:
-            if self.application_settings.sync_full_start_date is None:
-                raise SyncValidationError("ACTIVE_SYNC_FULL_START_DATE e obrigatoria para FULL.")
-            start_date, end_date = self.application_settings.sync_full_start_date, current
-        else:
-            days = self.application_settings.sync_incremental_lookback_days
-            start_date, end_date = current - timedelta(days=days - 1), current
-        if start_date > end_date:
-            raise SyncValidationError("A data final nao pode ser menor que a inicial.")
-        if end_date > current:
-            raise SyncValidationError("Datas futuras nao sao permitidas.")
-        return start_date, end_date
+        resolved = self.period_resolver.resolve(command)
+        return resolved.start_date, resolved.end_date
 
     @staticmethod
     def _windows(start_date: date, end_date: date) -> tuple[ReportWindow, ...]:
@@ -239,6 +235,7 @@ class OperationalSyncPipeline:
             source_files=(extraction.excel_path.name,),
             period_start=window.date_from,
             period_end=window.date_to,
+            backup_files=(download.path,),
         )
 
     def _database_path(self):

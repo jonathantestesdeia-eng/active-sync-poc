@@ -39,6 +39,31 @@ somente a identidade operacional correspondente. A auditoria de cada execução
 
 Atualizado em 22/07/2026 durante a Sprint 15.
 
+## Política inteligente de período
+
+`SyncPeriodResolver` centraliza exclusivamente a escolha das datas do modo
+`INCREMENTAL`. Antes de solicitar qualquer relatório, consulta se a tabela do
+perfil ativo possui movimentos e qual foi a última execução finalizada:
+
+```text
+Tabela principal vazia
+        → INITIAL_LOAD
+        → primeiro dia do mês atual até hoje
+
+Tabela principal populada + última execução sem erro
+        → INCREMENTAL
+        → hoje - ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS até hoje
+
+Tabela principal populada + última execução com erro
+        → RECOVERY
+        → hoje - ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS até hoje
+```
+
+A execução corrente em `EM_EXECUCAO` não interfere na decisão. Datas são
+calculadas em `America/Sao_Paulo`. A política não modifica parser, transformação,
+UPSERT, banco, scheduler, backup ou contratos HTTP; `PERIODO` e `FULL` continuam
+explícitos.
+
 ## Visão geral
 
 O projeto possui seis áreas desacopladas:
@@ -103,6 +128,7 @@ O Snapshot Validator é não destrutivo: ele diagnostica os arquivos, mas não r
 | `auth.py` | Autenticar e obter a sessão inicial. |
 | `client.py` | Manter a sessão HTTP e selecionar o contexto operacional. |
 | `reports.py` | Preparar e solicitar relatórios. |
+| `operation/sync_policy.py` | Centralizar INITIAL_LOAD, INCREMENTAL e RECOVERY. |
 | `report_grid.py` | Interpretar a grade assíncrona e localizar solicitações. |
 | `downloader.py` | Baixar e validar arquivos ZIP sem sobrescrita silenciosa. |
 | `extractor.py` | Extrair arquivos com proteção contra caminhos inseguros. |

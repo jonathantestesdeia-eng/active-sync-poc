@@ -19,7 +19,11 @@ services:
       - key: ACTIVE_SYNC_PROFILE
         value: supertrack
       - key: ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS
-        value: "1"
+        value: "7"
+      - key: ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS
+        value: "14"
+      - key: ACTIVE_SYNC_INITIAL_LOAD_MODE
+        value: current_month
       - key: ACTIVE_SYNC_API_KEY
         sync: false
       - key: ACTIVE_SYNC_BUILD_DATE

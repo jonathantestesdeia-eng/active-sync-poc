@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from active_sync.config import ApplicationSettings
 from active_sync.logger import configure_api_logging
+from active_sync.storage import create_sync_backup
 from active_sync.operation import (
     OperationalSyncPipeline,
     OperationalObservability,
@@ -42,16 +43,28 @@ def create_app(settings: ApplicationSettings | None = None) -> FastAPI:
         logger = logging.getLogger("active_sync.api")
         if selected.database_path is None:
             raise RuntimeError("Banco operacional nao configurado.")
+        started_at = datetime.now(timezone.utc)
         history = SyncHistoryStore(selected.database_path)
         history.initialize()
+        recovered_syncs = history.recover_interrupted(started_at)
+        if recovered_syncs:
+            logger.warning(
+                "sync_recovery_completed",
+                extra={
+                    "recovered_syncs": recovered_syncs,
+                    "finished_at": started_at,
+                },
+            )
         pipeline = OperationalSyncPipeline(selected, logger)
         notifier = LoggingSyncNotifier(logger)
+        backup = create_sync_backup(selected, logger)
         coordinator = SyncCoordinator(
             pipeline,
             history,
             logger,
             profile=selected.processing_profile,
             notifier=notifier,
+            backup=backup,
         )
         scheduler_store = SchedulerConfigurationStore(selected.database_path)
         scheduler_configuration = scheduler_store.initialize(selected.sync_schedule)
@@ -66,7 +79,6 @@ def create_app(settings: ApplicationSettings | None = None) -> FastAPI:
             scheduler_store,
             scheduler,
         )
-        started_at = datetime.now(timezone.utc)
         observability = OperationalObservability(selected, history, started_at)
         reprocessor = SyncReprocessor(
             coordinator,

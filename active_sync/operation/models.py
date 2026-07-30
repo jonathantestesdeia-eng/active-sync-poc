@@ -54,6 +54,7 @@ class SyncResult:
     period_end: date | None = None
     warnings: tuple[str, ...] = ()
     messages: tuple[str, ...] = ()
+    backup_files: tuple[Path, ...] = ()
 
     @property
     def records_processed(self) -> int:
@@ -88,6 +89,9 @@ class SyncResult:
             else None,
             warnings=tuple(dict.fromkeys(self.warnings + other.warnings)),
             messages=tuple(dict.fromkeys(self.messages + other.messages)),
+            backup_files=tuple(
+                dict.fromkeys(self.backup_files + other.backup_files)
+            ),
         )
 
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import StrEnum
 from datetime import date, datetime, time as clock_time
 from pathlib import Path
@@ -29,6 +29,12 @@ class ProcessingProfile(StrEnum):
 
     SUPERTRACK = "supertrack"
     PERFORMANCE = "performance"
+
+
+class InitialLoadMode(StrEnum):
+    """Estratégias suportadas para a primeira carga automática."""
+
+    CURRENT_MONTH = "current_month"
 
 
 def _environment_values(
@@ -72,6 +78,21 @@ def _config_positive_int(values: dict[str, str], name: str, default: int) -> int
     return result
 
 
+def _config_boolean(values: dict[str, str], name: str, default: bool) -> bool:
+    raw = (_config_text(values, name) or str(default)).casefold()
+    options = {
+        "true": True,
+        "false": False,
+        "1": True,
+        "0": False,
+        "yes": True,
+        "no": False,
+    }
+    if raw not in options:
+        raise ConfigError(f"{name} deve ser true ou false.")
+    return options[raw]
+
+
 def _config_date(values: dict[str, str], name: str) -> date | None:
     raw = _config_text(values, name)
     if raw is None:
@@ -110,11 +131,17 @@ class ApplicationSettings:
     database_engine: str = "sqlite"
     sync_schedule: tuple[clock_time, ...] = ()
     sync_full_start_date: date | None = None
-    sync_incremental_lookback_days: int = 1
+    sync_incremental_lookback_days: int = 7
+    sync_recovery_lookback_days: int = 14
+    sync_initial_load_mode: InitialLoadMode = InitialLoadMode.CURRENT_MONTH
     sync_work_dir: Path = Path("runtime")
     sync_client_register_path: Path | None = None
     sync_client_register_sheet: str | None = None
     processing_profile: ProcessingProfile = ProcessingProfile.SUPERTRACK
+    google_drive_enabled: bool = False
+    google_drive_folder_id: str | None = None
+    google_application_credentials: Path | None = None
+    google_drive_credentials_json: str | None = field(default=None, repr=False)
 
     @property
     def debug(self) -> bool:
@@ -178,6 +205,9 @@ class ApplicationSettings:
 
         database_value = _config_text(values, "ACTIVE_SYNC_DATABASE_PATH")
         client_register_value = _config_text(values, "ACTIVE_SYNC_CLIENT_REGISTER_PATH")
+        google_credentials_path = _config_text(
+            values, "GOOGLE_APPLICATION_CREDENTIALS"
+        )
         raw_profile = (
             _config_text(values, "ACTIVE_SYNC_PROFILE")
             or ProcessingProfile.SUPERTRACK.value
@@ -187,6 +217,16 @@ class ApplicationSettings:
         except ValueError as error:
             raise ConfigError(
                 "ACTIVE_SYNC_PROFILE deve ser supertrack ou performance."
+            ) from error
+        raw_initial_load_mode = (
+            _config_text(values, "ACTIVE_SYNC_INITIAL_LOAD_MODE")
+            or InitialLoadMode.CURRENT_MONTH.value
+        )
+        try:
+            initial_load_mode = InitialLoadMode(raw_initial_load_mode.casefold())
+        except ValueError as error:
+            raise ConfigError(
+                "ACTIVE_SYNC_INITIAL_LOAD_MODE deve ser current_month."
             ) from error
         settings = cls(
             environment=environment,
@@ -198,8 +238,12 @@ class ApplicationSettings:
             sync_schedule=_config_schedule(values),
             sync_full_start_date=_config_date(values, "ACTIVE_SYNC_FULL_START_DATE"),
             sync_incremental_lookback_days=_config_positive_int(
-                values, "ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS", 1
+                values, "ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS", 7
             ),
+            sync_recovery_lookback_days=_config_positive_int(
+                values, "ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS", 14
+            ),
+            sync_initial_load_mode=initial_load_mode,
             sync_work_dir=Path(
                 _config_text(values, "ACTIVE_SYNC_WORK_DIR") or str(root / "runtime")
             ),
@@ -210,6 +254,16 @@ class ApplicationSettings:
                 values, "ACTIVE_SYNC_CLIENT_REGISTER_SHEET"
             ),
             processing_profile=processing_profile,
+            google_drive_enabled=_config_boolean(
+                values, "GOOGLE_DRIVE_ENABLED", False
+            ),
+            google_drive_folder_id=_config_text(values, "GOOGLE_DRIVE_FOLDER_ID"),
+            google_application_credentials=(
+                Path(google_credentials_path) if google_credentials_path else None
+            ),
+            google_drive_credentials_json=_config_text(
+                values, "GOOGLE_DRIVE_CREDENTIALS_JSON"
+            ),
         )
         if validate_required:
             settings.validate_required()

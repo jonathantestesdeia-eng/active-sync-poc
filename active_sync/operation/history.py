@@ -15,6 +15,7 @@ from .models import SyncCommand, SyncHistoryEntry, SyncMode, SyncOrigin, SyncRes
 
 SYNC_HISTORY_TABLE = "sync_execution"
 LEGACY_SYNC_HISTORY_TABLE = "sync_history"
+INTERRUPTED_BY_RESTART_MESSAGE = "Sincronização interrompida por reinício da aplicação."
 
 
 class SyncHistoryStore:
@@ -171,6 +172,52 @@ class SyncHistoryStore:
                 ),
             )
             database.commit()
+
+    def recover_interrupted(self, finished_at: datetime) -> int:
+        """Finaliza como erro as execuções abandonadas por um reinício da aplicação."""
+        with DatabaseManager(self.database_path) as database:
+            rows = database.execute(
+                f'''SELECT id, inicio FROM "{SYNC_HISTORY_TABLE}"
+                    WHERE status = ?''',
+                (SyncStatus.RUNNING.value,),
+            ).fetchall()
+            updates = []
+            for row in rows:
+                started_at = datetime.fromisoformat(str(row["inicio"]))
+                comparable_finished_at = finished_at
+                if started_at.tzinfo is None:
+                    comparable_finished_at = finished_at.replace(tzinfo=None)
+                elif comparable_finished_at.tzinfo is None:
+                    comparable_finished_at = comparable_finished_at.replace(
+                        tzinfo=started_at.tzinfo
+                    )
+                else:
+                    comparable_finished_at = comparable_finished_at.astimezone(
+                        started_at.tzinfo
+                    )
+                duration_ms = max(
+                    (comparable_finished_at - started_at).total_seconds() * 1000,
+                    0.0,
+                )
+                updates.append(
+                    (
+                        finished_at.isoformat(),
+                        duration_ms,
+                        SyncStatus.ERROR.value,
+                        INTERRUPTED_BY_RESTART_MESSAGE,
+                        int(row["id"]),
+                        SyncStatus.RUNNING.value,
+                    )
+                )
+            if updates:
+                database.executemany(
+                    f'''UPDATE "{SYNC_HISTORY_TABLE}" SET
+                        fim = ?, tempo_execucao = ?, status = ?, mensagem = ?
+                        WHERE id = ? AND status = ?''',
+                    updates,
+                )
+                database.commit()
+        return len(updates)
 
     def list(self, limit: int = 100, offset: int = 0) -> tuple[SyncHistoryEntry, ...]:
         with DatabaseManager(self.database_path) as database:

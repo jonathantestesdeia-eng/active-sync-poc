@@ -12,6 +12,7 @@ from pathlib import Path
 
 from active_sync.config import ProcessingProfile
 from active_sync.logger import request_id_context
+from active_sync.storage import DisabledSyncBackup, SyncBackup
 
 from .history import SyncHistoryStore
 from .models import (
@@ -48,6 +49,7 @@ class SyncCoordinator:
         now: Callable[[], datetime] | None = None,
         profile: ProcessingProfile = ProcessingProfile.SUPERTRACK,
         notifier: SyncNotifier | None = None,
+        backup: SyncBackup | None = None,
     ) -> None:
         self.pipeline = pipeline
         self.history = history
@@ -55,8 +57,10 @@ class SyncCoordinator:
         self.now = now or (lambda: datetime.now(timezone.utc))
         self.profile = profile
         self.notifier = notifier or LoggingSyncNotifier(logger)
+        self.backup = backup or DisabledSyncBackup()
         self._guard = asyncio.Lock()
         self._task: asyncio.Task[None] | None = None
+        self._backup_tasks: set[asyncio.Task[None]] = set()
         self._running: SyncHistoryEntry | None = None
         self._next_run_provider: Callable[[], datetime | None] = lambda: None
 
@@ -199,11 +203,55 @@ class SyncCoordinator:
                     )
                 )
                 self._running = None
+                if (
+                    status is SyncStatus.SUCCESS
+                    and result.backup_files
+                    and self.backup.enabled
+                ):
+                    backup_task = asyncio.create_task(
+                        self._run_backup(
+                            result.backup_files,
+                            completed_at=finished_at,
+                            request_id=command.request_id,
+                        )
+                    )
+                    self._backup_tasks.add(backup_task)
+                    backup_task.add_done_callback(self._backup_tasks.discard)
+
+    async def _run_backup(
+        self,
+        files: tuple[Path, ...],
+        *,
+        completed_at: datetime,
+        request_id: str,
+    ) -> None:
+        try:
+            await asyncio.to_thread(
+                self.backup.backup_files,
+                files,
+                completed_at=completed_at,
+                request_id=request_id,
+            )
+        except Exception:
+            self.logger.error(
+                "sync_backup_unexpected_failure",
+                extra={
+                    "request_id": request_id,
+                    "non_critical": True,
+                },
+                exc_info=self.logger.isEnabledFor(logging.DEBUG),
+            )
 
     async def wait_current(self) -> None:
         task = self._task
         if task is not None:
             await task
+
+    async def wait_backups(self) -> None:
+        """Aguarda backups pendentes somente quando solicitado explicitamente."""
+        tasks = tuple(self._backup_tasks)
+        if tasks:
+            await asyncio.gather(*tasks)
 
     def status(self) -> dict[str, object]:
         latest = self.history.latest()

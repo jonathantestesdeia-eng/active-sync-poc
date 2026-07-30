@@ -35,6 +35,23 @@ Configure uma janela deslizante com
 Sobreposições e reprocessamentos são idempotentes. A auditoria fica em
 `sync_execution`, com período, arquivos, contagens, duração, status e perfil.
 
+### Sincronização inteligente
+
+No modo operacional `INCREMENTAL`, `SyncPeriodResolver` decide o período:
+
+- base vazia: primeiro dia do mês atual até hoje (`INITIAL_LOAD`);
+- base populada: hoje menos a janela configurada até hoje (`INCREMENTAL`);
+- última execução finalizada com erro: usa a janela ampliada (`RECOVERY`).
+
+As datas usam `America/Sao_Paulo`. Os modos explícitos `PERIODO` e `FULL`
+permanecem disponíveis e não tiveram sua semântica alterada.
+
+```dotenv
+ACTIVE_SYNC_INITIAL_LOAD_MODE=current_month
+ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS=7
+ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS=14
+```
+
 ## Operação e observabilidade
 
 A Sprint 20 adiciona uma camada somente operacional, sem alterar Transformer,
@@ -59,6 +76,15 @@ Os logs HTTP e de sincronização são JSON estruturado. Toda execução possui
 `request_id`, métricas, arquivo, modo, status e erro. A interface
 `SyncNotifier` prepara eventos de conclusão, falha, arquivo inválido e banco
 indisponível sem enviar mensagens externas nesta Sprint.
+
+## Armazenamento externo preparado
+
+Existe um backup opcional e isolado para armazenamento permanente no Google
+Drive. Ele permanece desabilitado por padrão. Quando habilitado, envia somente
+o ZIP original após a sincronização e o SQLite já terem sido concluídos com
+sucesso; falhas do Drive são apenas registradas e nunca alteram o status. Consulte
+[`docs/GOOGLE_DRIVE_STORAGE.md`](docs/GOOGLE_DRIVE_STORAGE.md) para a decisão de
+autenticação, variáveis, organização `Active Sync/AAAA/MM` e fluxo.
 
 ## Execucao segura por ambiente
 

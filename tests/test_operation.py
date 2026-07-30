@@ -14,6 +14,7 @@ from active_sync.operation import (
     OperationalObservability,
     LoggingSyncNotifier,
     SyncAlreadyRunningError,
+    SyncCommand,
     SyncCoordinator,
     SyncHistoryStore,
     SyncMode,
@@ -88,6 +89,82 @@ def test_manual_incremental_execution_and_history(tmp_path: Path) -> None:
         assert pipeline.commands[0].mode is SyncMode.INCREMENTAL
 
     asyncio.run(scenario())
+
+
+def test_backup_starts_only_after_success_and_does_not_block_sync(
+    tmp_path: Path,
+) -> None:
+    class BlockingBackup:
+        enabled = True
+
+        def __init__(self) -> None:
+            self.started = Event()
+            self.release = Event()
+            self.files: tuple[Path, ...] = ()
+
+        def backup_files(self, files, *, completed_at, request_id):
+            del completed_at, request_id
+            self.files = files
+            self.started.set()
+            self.release.wait(timeout=5)
+
+    async def scenario() -> None:
+        zip_path = tmp_path / "validated.zip"
+        zip_path.write_bytes(b"PK-test")
+        pipeline = ImmediatePipeline(
+            SyncResult(
+                records_read=1,
+                records_inserted=1,
+                backup_files=(zip_path,),
+            )
+        )
+        history = SyncHistoryStore(tmp_path / "operation.sqlite3")
+        history.initialize()
+        backup = BlockingBackup()
+        sync = SyncCoordinator(
+            pipeline,
+            history,
+            logging.getLogger("test.operation"),
+            backup=backup,
+        )
+
+        entry = await sync.start(SyncMode.INCREMENTAL)
+        await sync.wait_current()
+        detail = sync.get_history(entry.id)
+        assert detail is not None
+        assert detail.status is SyncStatus.SUCCESS
+        assert await asyncio.to_thread(backup.started.wait, 2)
+        backup.release.set()
+        await sync.wait_backups()
+        assert backup.files == (zip_path,)
+
+    asyncio.run(scenario())
+
+
+def test_recovers_running_sync_as_error_after_application_restart(tmp_path: Path) -> None:
+    history = SyncHistoryStore(tmp_path / "operation.sqlite3")
+    history.initialize()
+    started_at = datetime(2026, 7, 29, 12, 0, tzinfo=timezone.utc)
+    entry = history.begin(
+        SyncCommand(
+            request_id="interrupted-request",
+            mode=SyncMode.INCREMENTAL,
+            origin=SyncOrigin.MANUAL,
+            user="operador",
+            started_at=started_at,
+        )
+    )
+    finished_at = started_at + timedelta(minutes=5)
+
+    assert history.recover_interrupted(finished_at) == 1
+
+    recovered = history.get(entry.id)
+    assert recovered is not None
+    assert recovered.status is SyncStatus.ERROR
+    assert recovered.finished_at == finished_at
+    assert recovered.duration_ms == 300_000
+    assert recovered.errors == "Sincronização interrompida por reinício da aplicação."
+    assert history.recover_interrupted(finished_at + timedelta(minutes=1)) == 0
 
 
 def test_sync_execution_audits_period_files_and_cancellations(
@@ -188,7 +265,7 @@ def test_pipeline_uses_single_window_implementation_for_all_modes(tmp_path: Path
         (),
         {"mode": SyncMode.PERIOD, "start_date": date(2026, 7, 1), "end_date": date(2026, 7, 22)},
     )
-    assert pipeline._resolve_dates(incremental) == (date(2026, 7, 20), fixed_today)
+    assert pipeline._resolve_dates(incremental) == (date(2026, 7, 1), fixed_today)
     assert pipeline._resolve_dates(full) == (date(2026, 7, 1), fixed_today)
     windows = pipeline._windows(*pipeline._resolve_dates(period))
     assert [(item.date_from, item.date_to) for item in windows] == [

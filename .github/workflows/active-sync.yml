@@ -1,0 +1,223 @@
+name: Active Sync - Sincronizacao diaria
+
+on:
+  schedule:
+    # GitHub Actions usa UTC. 09:00 UTC corresponde a 06:00 em America/Sao_Paulo.
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: active-sync-daily
+  cancel-in-progress: false
+
+jobs:
+  synchronize:
+    name: Sincronizar base
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      ACTIVE_SYNC_BASE_URL: ${{ secrets.ACTIVE_SYNC_BASE_URL }}
+      ACTIVE_SYNC_API_KEY: ${{ secrets.ACTIVE_SYNC_API_KEY }}
+      HEALTH_MAX_ATTEMPTS: "36"
+      HEALTH_RETRY_SECONDS: "10"
+      POLL_MAX_ATTEMPTS: "90"
+      POLL_INTERVAL_SECONDS: "20"
+
+    steps:
+      - name: Acordar o Render e acompanhar a sincronizacao
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          if [[ -z "${ACTIVE_SYNC_BASE_URL:-}" ]]; then
+            echo "::error::O secret ACTIVE_SYNC_BASE_URL nao foi configurado."
+            exit 1
+          fi
+
+          if [[ -z "${ACTIVE_SYNC_API_KEY:-}" ]]; then
+            echo "::error::O secret ACTIVE_SYNC_API_KEY nao foi configurado."
+            exit 1
+          fi
+
+          BASE_URL="${ACTIVE_SYNC_BASE_URL%/}"
+          HEALTH_BODY="$(mktemp)"
+          STATUS_BODY="$(mktemp)"
+          START_BODY="$(mktemp)"
+          trap 'rm -f "$HEALTH_BODY" "$STATUS_BODY" "$START_BODY"' EXIT
+
+          api_request() {
+            local method="$1"
+            local endpoint="$2"
+            local output_file="$3"
+            local payload="${4:-}"
+            local args=(
+              --silent
+              --show-error
+              --location
+              --connect-timeout 10
+              --max-time 30
+              --output "$output_file"
+              --write-out "%{http_code}"
+              --request "$method"
+              --header "X-API-Key: ${ACTIVE_SYNC_API_KEY}"
+              --header "Accept: application/json"
+            )
+
+            if [[ -n "$payload" ]]; then
+              args+=(--header "Content-Type: application/json" --data "$payload")
+            fi
+
+            curl "${args[@]}" "${BASE_URL}${endpoint}" || true
+          }
+
+          echo "Acordando o Render e aguardando a API..."
+          health_ok=false
+
+          for ((attempt = 1; attempt <= HEALTH_MAX_ATTEMPTS; attempt++)); do
+            health_code="$(
+              curl \
+                --silent \
+                --show-error \
+                --location \
+                --connect-timeout 10 \
+                --max-time 30 \
+                --output "$HEALTH_BODY" \
+                --write-out "%{http_code}" \
+                "${BASE_URL}/health" || true
+            )"
+
+            if [[ "$health_code" == "200" ]] &&
+              jq -e '.status == "ok" and .api == "ok" and .database == "ok"' \
+                "$HEALTH_BODY" >/dev/null 2>&1; then
+              health_ok=true
+              echo "Render acordou."
+              echo "Health OK."
+              break
+            fi
+
+            echo "Health ainda indisponivel (tentativa ${attempt}/${HEALTH_MAX_ATTEMPTS}, HTTP ${health_code:-000})."
+
+            if (( attempt < HEALTH_MAX_ATTEMPTS )); then
+              sleep "$HEALTH_RETRY_SECONDS"
+            fi
+          done
+
+          if [[ "$health_ok" != "true" ]]; then
+            echo "::error::A API nao ficou pronta dentro do limite de tentativas."
+            exit 1
+          fi
+
+          status_code="$(api_request GET "/sync/status" "$STATUS_BODY")"
+          if [[ "$status_code" != "200" ]]; then
+            echo "::error::Nao foi possivel consultar o estado da sincronizacao (HTTP ${status_code:-000})."
+            exit 1
+          fi
+
+          if jq -e '.running == true' "$STATUS_BODY" >/dev/null 2>&1; then
+            current_request_id="$(jq -r '.current.request_id // "desconhecido"' "$STATUS_BODY")"
+            echo "Ja existe uma sincronizacao em andamento (${current_request_id})."
+            echo "A nova solicitacao foi cancelada sem interferir na execucao existente."
+            {
+              echo "## Active Sync"
+              echo
+              echo "- Resultado: nova solicitacao ignorada"
+              echo "- Motivo: ja existe uma sincronizacao em andamento"
+              echo "- Request ID existente: \`${current_request_id}\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "Iniciando sincronizacao incremental..."
+          started_epoch="$(date +%s)"
+          start_code="$(
+            api_request \
+              POST \
+              "/sync/run" \
+              "$START_BODY" \
+              '{"mode":"INCREMENTAL"}'
+          )"
+
+          if [[ "$start_code" == "409" ]]; then
+            echo "Outra sincronizacao foi iniciada antes desta solicitacao."
+            echo "A nova solicitacao foi cancelada."
+            exit 0
+          fi
+
+          if [[ "$start_code" != "202" ]]; then
+            echo "::error::A API recusou o inicio da sincronizacao (HTTP ${start_code:-000})."
+            exit 1
+          fi
+
+          request_id="$(jq -er '.request_id' "$START_BODY" 2>/dev/null || true)"
+          if [[ -z "$request_id" ]]; then
+            echo "::error::A resposta de inicio nao apresentou request_id."
+            exit 1
+          fi
+
+          echo "Sincronizacao iniciada."
+          echo "Request ID: ${request_id}"
+
+          for ((attempt = 1; attempt <= POLL_MAX_ATTEMPTS; attempt++)); do
+            sleep "$POLL_INTERVAL_SECONDS"
+
+            status_code="$(api_request GET "/sync/status" "$STATUS_BODY")"
+            elapsed_seconds="$(( $(date +%s) - started_epoch ))"
+
+            if [[ "$status_code" != "200" ]]; then
+              echo "Status temporariamente indisponivel (HTTP ${status_code:-000}). Tempo decorrido: ${elapsed_seconds}s."
+              continue
+            fi
+
+            running="$(jq -r '.running // false' "$STATUS_BODY")"
+            current_request_id="$(jq -r '.current.request_id // empty' "$STATUS_BODY")"
+            current_status="$(jq -r '.current.status // empty' "$STATUS_BODY")"
+            last_request_id="$(jq -r '.last_execution.request_id // empty' "$STATUS_BODY")"
+            final_status="$(jq -r '.last_execution.status // .final_status // empty' "$STATUS_BODY")"
+
+            if [[ "$running" == "true" ]]; then
+              if [[ -n "$current_request_id" && "$current_request_id" != "$request_id" ]]; then
+                echo "::error::A API informou outra execucao como ativa."
+                exit 1
+              fi
+
+              echo "Status atual: ${current_status:-EM_EXECUCAO}. Tempo decorrido: ${elapsed_seconds}s."
+              continue
+            fi
+
+            if [[ "$last_request_id" != "$request_id" ]]; then
+              echo "Aguardando a consolidacao do resultado do request ${request_id}. Tempo decorrido: ${elapsed_seconds}s."
+              continue
+            fi
+
+            echo "Status final: ${final_status:-DESCONHECIDO}."
+            echo "Tempo total: ${elapsed_seconds}s."
+            echo "Request ID: ${request_id}"
+
+            {
+              echo "## Active Sync"
+              echo
+              echo "- Request ID: \`${request_id}\`"
+              echo "- Status final: **${final_status:-DESCONHECIDO}**"
+              echo "- Tempo total: ${elapsed_seconds}s"
+            } >> "$GITHUB_STEP_SUMMARY"
+
+            if [[ "$final_status" == "SUCESSO" ]]; then
+              echo "Sincronizacao concluida com sucesso."
+              exit 0
+            fi
+
+            if [[ "$final_status" == "ERRO" ]]; then
+              echo "::error::A sincronizacao terminou com erro."
+              exit 1
+            fi
+
+            echo "::error::A sincronizacao terminou com um estado inesperado: ${final_status:-vazio}."
+            exit 1
+          done
+
+          elapsed_seconds="$(( $(date +%s) - started_epoch ))"
+          echo "::error::Timeout ao aguardar a sincronizacao apos ${elapsed_seconds}s."
+          exit 1

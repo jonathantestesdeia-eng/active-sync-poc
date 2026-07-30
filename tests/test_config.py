@@ -96,12 +96,16 @@ def test_sync_schedule_and_operational_settings_are_loaded_from_environment(tmp_
             "ACTIVE_SYNC_SCHEDULE": "18:00,08:00,12:00",
             "ACTIVE_SYNC_FULL_START_DATE": "2026-01-01",
             "ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS": "3",
+            "ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS": "14",
+            "ACTIVE_SYNC_INITIAL_LOAD_MODE": "current_month",
             "ACTIVE_SYNC_WORK_DIR": "runtime-test",
         },
     )
     assert settings.sync_schedule == (time(8), time(12), time(18))
     assert settings.sync_full_start_date == date(2026, 1, 1)
     assert settings.sync_incremental_lookback_days == 3
+    assert settings.sync_recovery_lookback_days == 14
+    assert settings.sync_initial_load_mode.value == "current_month"
 
 
 def test_invalid_sync_schedule_is_rejected(tmp_path) -> None:
@@ -116,3 +120,65 @@ def test_invalid_sync_schedule_is_rejected(tmp_path) -> None:
                 "ACTIVE_SYNC_SCHEDULE": "8 horas",
             },
         )
+
+
+def test_invalid_initial_load_mode_is_rejected(tmp_path) -> None:
+    with pytest.raises(ConfigError, match="INITIAL_LOAD_MODE"):
+        ApplicationSettings.from_env(
+            project_root=tmp_path,
+            environ={
+                "APP_ENV": "test",
+                "ACTIVE_SYNC_INITIAL_LOAD_MODE": "all_history",
+            },
+            validate_required=False,
+        )
+
+
+def test_google_drive_is_disabled_by_default(tmp_path) -> None:
+    settings = ApplicationSettings.from_env(
+        project_root=tmp_path,
+        environ={"APP_ENV": "test"},
+        validate_required=False,
+    )
+
+    assert settings.google_drive_enabled is False
+    assert settings.google_drive_folder_id is None
+    assert settings.google_application_credentials is None
+    assert settings.google_drive_credentials_json is None
+
+
+def test_optional_google_drive_does_not_block_application_validation(tmp_path) -> None:
+    settings = ApplicationSettings.from_env(
+        project_root=tmp_path,
+        environ={
+            "APP_ENV": "test",
+            "ACTIVE_SYNC_API_KEY": "test-api-key-123456789",
+            "ACTIVE_SYNC_ALLOWED_ORIGINS": "http://testserver",
+            "ACTIVE_SYNC_DATABASE_PATH": "test.sqlite3",
+            "GOOGLE_DRIVE_ENABLED": "true",
+        },
+    )
+
+    assert settings.google_drive_enabled is True
+    assert settings.google_drive_folder_id is None
+
+
+def test_google_drive_configuration_is_loaded_without_reading_credentials(
+    tmp_path,
+) -> None:
+    settings = ApplicationSettings.from_env(
+        project_root=tmp_path,
+        environ={
+            "APP_ENV": "test",
+            "ACTIVE_SYNC_API_KEY": "test-api-key-123456789",
+            "ACTIVE_SYNC_ALLOWED_ORIGINS": "http://testserver",
+            "ACTIVE_SYNC_DATABASE_PATH": "test.sqlite3",
+            "GOOGLE_DRIVE_ENABLED": "true",
+            "GOOGLE_DRIVE_FOLDER_ID": "folder-id",
+            "GOOGLE_DRIVE_CREDENTIALS_JSON": '{"type":"authorized_user"}',
+        },
+    )
+
+    assert settings.google_drive_enabled is True
+    assert settings.google_drive_folder_id == "folder-id"
+    assert settings.google_drive_credentials_json == '{"type":"authorized_user"}'

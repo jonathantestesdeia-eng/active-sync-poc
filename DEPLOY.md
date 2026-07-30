@@ -78,13 +78,41 @@ ACTIVE_SYNC_VERSION=0.2.0
 ACTIVE_SYNC_BUILD_DATE=2026-07-22T19:00:00Z
 ACTIVE_SYNC_SCHEDULE=08:00,12:00,18:00
 ACTIVE_SYNC_FULL_START_DATE=2026-01-01
-ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS=1
+ACTIVE_SYNC_INITIAL_LOAD_MODE=current_month
+ACTIVE_SYNC_INCREMENTAL_LOOKBACK_DAYS=7
+ACTIVE_SYNC_RECOVERY_LOOKBACK_DAYS=14
 ACTIVE_SYNC_WORK_DIR=C:/active-sync/runtime
 ACTIVE_SYNC_CLIENT_REGISTER_PATH=C:/active-sync/config/cadastro-clientes.xlsx
 ACTIVE_SYNC_CLIENT_REGISTER_SHEET=Planilha1
 ```
 
 Nunca use `*` em CORS e nunca use prefixo `VITE_` para a API Key.
+
+### Google Drive (backup opcional)
+
+Enquanto `GOOGLE_DRIVE_ENABLED=false`, não configure pasta nem credenciais e o
+serviço continua exatamente com o comportamento atual.
+
+Para ativar no Render, prefira OAuth 2.0 de usuário para uma conta Google
+pessoal. Armazene o JSON `authorized_user` como segredo em
+`GOOGLE_DRIVE_CREDENTIALS_JSON` ou como Secret File apontado por
+`GOOGLE_APPLICATION_CREDENTIALS`. Nunca use as duas opções simultaneamente.
+
+```dotenv
+GOOGLE_DRIVE_ENABLED=false
+GOOGLE_DRIVE_FOLDER_ID=
+GOOGLE_APPLICATION_CREDENTIALS=
+GOOGLE_DRIVE_CREDENTIALS_JSON=
+```
+
+Consulte `docs/GOOGLE_DRIVE_STORAGE.md`. Nenhuma dessas variáveis utiliza
+prefixo `VITE_`, pois credenciais e operações do Drive pertencem exclusivamente
+ao serviço Python.
+
+`GOOGLE_DRIVE_FOLDER_ID` representa a pasta pai onde será criada ou reutilizada
+a estrutura `Active Sync/AAAA/MM`. Depois que o SQLite e o histórico forem
+finalizados como sucesso, somente o ZIP validado é enviado em background.
+Falhas do Drive não bloqueiam novas sincronizações nem alteram o histórico.
 
 ## Validacao
 

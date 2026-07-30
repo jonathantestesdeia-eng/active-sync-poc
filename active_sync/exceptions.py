@@ -45,6 +45,22 @@ class ExcelReadError(ActiveSyncError):
     """Falha futura na leitura do Excel."""
 
 
+class StorageError(ActiveSyncError):
+    """Falha segura na infraestrutura de armazenamento externo."""
+
+
+class StorageConfigurationError(StorageError):
+    """Configuração do armazenamento externo ausente ou inválida."""
+
+
+class StorageDisabledError(StorageError):
+    """Tentativa de uso de um armazenamento explicitamente desabilitado."""
+
+
+class StorageUploadError(StorageError):
+    """Falha ao armazenar um arquivo no provedor externo."""
+
+
 class TransformationError(ActiveSyncError):
     """Falha na transformação do relatório bruto."""
 
