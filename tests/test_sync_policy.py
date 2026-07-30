@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import logging
 from pathlib import Path
 
 from active_sync.config import AppEnvironment, ApplicationSettings
 from active_sync.operation import (
+    OperationalSyncPipeline,
     SyncCommand,
     SyncHistoryStore,
     SyncMode,
@@ -15,6 +16,7 @@ from active_sync.operation import (
     SyncResult,
     SyncStatus,
 )
+from active_sync.operation.sync_policy import SYNC_TIMEZONE
 from active_sync.persistence import DatabaseManager, MigrationManager
 
 
@@ -123,6 +125,50 @@ def test_populated_database_without_history_uses_incremental_window(
     assert period.policy_mode is SyncPolicyMode.INCREMENTAL
     assert period.start_date == date(2026, 7, 22)
     assert period.end_date == date(2026, 7, 29)
+
+
+def test_pipeline_incremental_accepts_manual_history_without_finished_at(
+    tmp_path: Path,
+) -> None:
+    application_settings = settings(tmp_path)
+    assert application_settings.database_path is not None
+    seed_movement(application_settings.database_path)
+    history = SyncHistoryStore(application_settings.database_path)
+    history.initialize()
+    previous = history.begin(
+        SyncCommand(
+            request_id="manual-without-finished-at",
+            mode=SyncMode.PERIOD,
+            origin=SyncOrigin.MANUAL,
+            user="operator",
+            started_at=datetime(2026, 7, 29, 12, tzinfo=timezone.utc),
+            start_date=date(2026, 7, 1),
+            end_date=date(2026, 7, 29),
+        )
+    )
+    with DatabaseManager(application_settings.database_path) as database:
+        database.execute(
+            'UPDATE "sync_execution" SET status = ? WHERE id = ?',
+            (SyncStatus.SUCCESS.value, previous.id),
+        )
+        database.commit()
+
+    latest = history.latest()
+    assert latest is not None
+    assert latest.origin is SyncOrigin.MANUAL
+    assert latest.finished_at is None
+
+    pipeline = OperationalSyncPipeline(
+        application_settings,
+        logging.getLogger("test.sync-policy"),
+    )
+    start_date, end_date = pipeline._resolve_dates(command())
+
+    current = datetime.now(SYNC_TIMEZONE).date()
+    assert start_date == current - timedelta(
+        days=application_settings.sync_incremental_lookback_days
+    )
+    assert end_date == current
 
 
 def test_last_successful_sync_keeps_incremental_window(tmp_path: Path) -> None:

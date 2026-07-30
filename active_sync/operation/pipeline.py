@@ -42,9 +42,7 @@ class OperationalSyncPipeline:
         self.today = today or date.today
         resolver_now = (
             lambda: datetime.combine(self.today(), time.min, tzinfo=SYNC_TIMEZONE)
-            if today is not None
-            else None
-        )
+        ) if today is not None else None
         self.period_resolver = SyncPeriodResolver(
             application_settings,
             logger,
